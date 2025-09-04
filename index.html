@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🎫 Automatic Ticket Classification</h1>
+        <p class="subtitle">Enter a support ticket description and get its predicted category.</p>
+
+        <form method="post">
+            <textarea name="text" rows="6" placeholder="Type your ticket text here..."></textarea>
+            <button type="submit">Classify</button>
+        </form>
+
+        {% if prediction %}
+        <div class="result">
+            <h2>Prediction: <span>{{ prediction }}</span></h2>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
